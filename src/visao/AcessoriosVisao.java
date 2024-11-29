@@ -2,6 +2,8 @@ package visao;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -11,6 +13,9 @@ public class AcessoriosVisao extends FormPadrao {
     
     JLabel jlNome, jlDescricao, jlValor, jlQuantidade;
     JTextField jtfNome, jtfDescricao, jtfValor, jtfQuantidade;
+    
+    JTable tabelaListagem;
+    DefaultTableModel modelListagem;
     
     public AcessoriosVisao() {
         setTitle("CADASTRO DE ACESSORIOS");
@@ -28,24 +33,29 @@ public class AcessoriosVisao extends FormPadrao {
         jpCamposDados.add(jlDescricao);
         
         jtfDescricao = new JTextField();
-        jtfDescricao.setBounds(9, 85, 650, 30);
+        jtfDescricao.setBounds(9, 85, 650, 100);
         jpCamposDados.add(jtfDescricao);
         
         jlValor = new JLabel("Valor:");
-        jlValor.setBounds(9, 115, 50, 25);
+        jlValor.setBounds(9, 180, 50, 25);
         jpCamposDados.add(jlValor);
         
         jtfValor = new JTextField();
-        jtfValor.setBounds(9, 135, 150, 25);
+        jtfValor.setBounds(9, 200, 150, 25);
         jpCamposDados.add(jtfValor);
         
         jlQuantidade = new JLabel("Quantidade:");
-        jlQuantidade.setBounds(170, 115, 100, 25);
+        jlQuantidade.setBounds(180, 180, 100, 25);
         jpCamposDados.add(jlQuantidade);
         
         jtfQuantidade = new JTextField();
-        jtfQuantidade.setBounds(170, 135, 250, 25);
+        jtfQuantidade.setBounds(180, 200, 250, 25);
         jpCamposDados.add(jtfQuantidade);
+        
+        //Configuração da Tabela no jspListagem no FormPadrao
+        modelListagem = new DefaultTableModel(new String[]{"Nome", "Descrição", "Quantidade", "Valor"}, 0);
+        tabelaListagem = new JTable(modelListagem);
+        jspListagem.setViewportView(tabelaListagem);
         
    }
 }

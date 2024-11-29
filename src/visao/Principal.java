@@ -36,14 +36,15 @@ public class Principal extends javax.swing.JFrame {
         jmiClientes = new javax.swing.JMenuItem();
         jmiVeiculos = new javax.swing.JMenuItem();
         jmiAcessorios = new javax.swing.JMenuItem();
+        jmiMarcaModelo = new javax.swing.JMenuItem();
         jmOrdemServico = new javax.swing.JMenu();
         jmiNovaOs = new javax.swing.JMenuItem();
         jmiConsultarOs = new javax.swing.JMenuItem();
         jmGestaoEstoque = new javax.swing.JMenu();
         jmiPeças = new javax.swing.JMenuItem();
         jmServicos = new javax.swing.JMenu();
+        jmiCadastroServicos = new javax.swing.JMenuItem();
         jmiGerenciarServicos = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jmRelatorios = new javax.swing.JMenu();
         jmiRelatoriosOs = new javax.swing.JMenuItem();
         jmFuncionario = new javax.swing.JMenu();
@@ -103,6 +104,15 @@ public class Principal extends javax.swing.JFrame {
         });
         jmCadastros.add(jmiAcessorios);
 
+        jmiMarcaModelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/marca.png"))); // NOI18N
+        jmiMarcaModelo.setText("Marca / Modelo");
+        jmiMarcaModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiMarcaModeloActionPerformed(evt);
+            }
+        });
+        jmCadastros.add(jmiMarcaModelo);
+
         jMenuBar1.add(jmCadastros);
 
         jmOrdemServico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/OS.png"))); // NOI18N
@@ -149,7 +159,15 @@ public class Principal extends javax.swing.JFrame {
         jmServicos.setText("Serviços");
         jmServicos.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
 
-        jmiGerenciarServicos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jmiCadastroServicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/servico.png"))); // NOI18N
+        jmiCadastroServicos.setText("Cadastro de Serviços");
+        jmiCadastroServicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCadastroServicosActionPerformed(evt);
+            }
+        });
+        jmServicos.add(jmiCadastroServicos);
+
         jmiGerenciarServicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/9375318.png"))); // NOI18N
         jmiGerenciarServicos.setText("Gerenciar Serviços");
         jmiGerenciarServicos.addActionListener(new java.awt.event.ActionListener() {
@@ -158,15 +176,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jmServicos.add(jmiGerenciarServicos);
-
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/servico.png"))); // NOI18N
-        jMenuItem2.setText("Cadastro de Serviços");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jmServicos.add(jMenuItem2);
 
         jMenuBar1.add(jmServicos);
 
@@ -214,11 +223,6 @@ public class Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmiGerenciarServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiGerenciarServicosActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jmiGerenciarServicosActionPerformed
-
     private void jmiClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiClientesActionPerformed
         // TODO add your handling code here:
         CadastroClienteVisao tela = new CadastroClienteVisao();
@@ -262,12 +266,26 @@ public class Principal extends javax.swing.JFrame {
         tela.setVisible(true);
     }//GEN-LAST:event_jmiFuncionarioActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jmiCadastroServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadastroServicosActionPerformed
         // TODO add your handling code here:
         CadastroServicoVisao tela = new CadastroServicoVisao();
         jDesktop.add(tela);
         tela.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jmiCadastroServicosActionPerformed
+
+    private void jmiMarcaModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMarcaModeloActionPerformed
+        // TODO add your handling code here:
+        CadastroMarcaModelo tela = new CadastroMarcaModelo();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiMarcaModeloActionPerformed
+
+    private void jmiGerenciarServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiGerenciarServicosActionPerformed
+        // TODO add your handling code here:
+        GerenciarServicosVisao tela = new GerenciarServicosVisao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiGerenciarServicosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,7 +325,6 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktop;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu jmCadastros;
     private javax.swing.JMenu jmFuncionario;
     private javax.swing.JMenu jmGestaoEstoque;
@@ -315,10 +332,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jmRelatorios;
     private javax.swing.JMenu jmServicos;
     private javax.swing.JMenuItem jmiAcessorios;
+    private javax.swing.JMenuItem jmiCadastroServicos;
     private javax.swing.JMenuItem jmiClientes;
     private javax.swing.JMenuItem jmiConsultarOs;
     private javax.swing.JMenuItem jmiFuncionario;
     private javax.swing.JMenuItem jmiGerenciarServicos;
+    private javax.swing.JMenuItem jmiMarcaModelo;
     private javax.swing.JMenuItem jmiNovaOs;
     private javax.swing.JMenuItem jmiPeças;
     private javax.swing.JMenuItem jmiRelatoriosOs;

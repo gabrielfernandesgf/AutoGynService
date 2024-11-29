@@ -10,27 +10,27 @@ import javax.swing.JTextField;
  */
 public class EstoqueVisao extends FormPadrao {
     
-    JLabel jlCodigo, jlNomeDaPeca, jlFabricante, jlQuantidade, jlValorCusto, jlValorVenda;
-    JTextField jtfCodigo, jtfNomeDaPeca, jtfFabricante, jtfQuantidade, jtfValorCusto, jtfValorVenda;
+    JLabel jlId, jlNomeDaPeca, jlFabricante, jlQuantidade, jlValorCusto, jlValorVenda, jlVolumeTamanho;
+    JTextField jtfId, jtfNomeDaPeca, jtfFabricante, jtfQuantidade, jtfValorCusto, jtfValorVenda, jtfVolumeTamanho;
     
     public EstoqueVisao(){
         setTitle("Gestao de Estoque");
         
-        jlCodigo = new JLabel("Codigo:");
-        jlCodigo.setBounds(9, 5, 50, 25);
-        jpCamposDados.add(jlCodigo);
+        jlId = new JLabel("ID:");
+        jlId.setBounds(9, 5, 50, 25);
+        jpCamposDados.add(jlId);
         
-        jtfCodigo = new JTextField();
-        jtfCodigo.setBounds(60, 5, 50, 25);
-        jpCamposDados.add(jtfCodigo);
-        jtfCodigo.setEditable(false);
+        jtfId = new JTextField();
+        jtfId.setBounds(50, 5, 50, 25);
+        jpCamposDados.add(jtfId);
+        jtfId.setEditable(false);
         
         jlNomeDaPeca = new JLabel("Nome da Peça:");
-        jlNomeDaPeca.setBounds(125, 0, 100, 25);
+        jlNomeDaPeca.setBounds(125, 5, 100, 25);
         jpCamposDados.add(jlNomeDaPeca);
         
         jtfNomeDaPeca = new JTextField();
-        jtfNomeDaPeca.setBounds(120, 25, 520, 25);
+        jtfNomeDaPeca.setBounds(210, 5, 550, 25);
         jpCamposDados.add(jtfNomeDaPeca);
         
         jlFabricante = new JLabel("Fabricante:");
@@ -63,6 +63,14 @@ public class EstoqueVisao extends FormPadrao {
         
         jtfValorVenda = new JTextField();
         jtfValorVenda.setBounds(280, 110, 250, 25);
+        jpCamposDados.add(jtfValorVenda);
+        
+        jlVolumeTamanho = new JLabel("Volume / Tamanho:");
+        jlVolumeTamanho.setBounds(550, 90, 150, 25);
+        jpCamposDados.add(jlVolumeTamanho);
+        
+        jtfValorVenda = new JTextField();
+        jtfValorVenda.setBounds(550, 110, 200, 25);
         jpCamposDados.add(jtfValorVenda);
         
         

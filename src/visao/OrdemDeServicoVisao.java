@@ -4,9 +4,12 @@
  */
 package visao;
 
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +21,9 @@ public class OrdemDeServicoVisao extends FormPadrao {
     JLabel jlStatus, jlVeiculo, jlDataInicio, jlDataFim, jlValorServicos, jlValorPecas, jlValorTotal, jlValorPago, jlCliente, jlId, jlCodigoOs, jlModelo, jlServicos,
            jlPecas;
     JTextField jtfVeiculo, jtfDataInicio, jtfDataFim, jtfValorServico, jtfValorPecas, jtfValorTotal, jtfValorPago, jtfId, jtfModelo;
+    JButton btnAddServico, btnRemoverServico, btnAddPeca, btnRemoverPeca;
+    JTable tabelaListagem;
+    DefaultTableModel modelListagem;
     
     public OrdemDeServicoVisao() {
         setTitle("ORDEM DE SERVIÇO");
@@ -88,6 +94,14 @@ public class OrdemDeServicoVisao extends FormPadrao {
         jcbServicos.setBounds(60, 110, 600, 25);
         jpCamposDados.add(jcbServicos);
         
+        btnAddServico = new JButton("+");
+        btnAddServico.setBounds(660, 110, 50, 25);
+        jpCamposDados.add(btnAddServico);
+        
+        btnRemoverServico = new JButton("-");
+        btnRemoverServico.setBounds(710, 110, 50, 25);
+        jpCamposDados.add(btnRemoverServico);
+        
         jlPecas = new JLabel("Peças:");
         jlPecas.setBounds(2, 140, 100, 25);
         jpCamposDados.add(jlPecas);
@@ -95,6 +109,14 @@ public class OrdemDeServicoVisao extends FormPadrao {
         jcbPecas = new JComboBox<>();
         jcbPecas.setBounds(60, 140, 600, 25);
         jpCamposDados.add(jcbPecas);
+        
+        btnAddPeca = new JButton("+");
+        btnAddPeca.setBounds(660, 140, 50, 25);
+        jpCamposDados.add(btnAddPeca);
+        
+        btnRemoverPeca = new JButton("-");
+        btnRemoverPeca.setBounds(710, 140, 50, 25);
+        jpCamposDados.add(btnRemoverPeca);
         
         jlValorServicos = new JLabel("Total Serviços:");
         jlValorServicos.setBounds(50, 10, 100, 25);
@@ -119,6 +141,14 @@ public class OrdemDeServicoVisao extends FormPadrao {
         jtfValorTotal = new JTextField();
         jtfValorTotal.setBounds(360, 30, 150, 25);
         jpValores.add(jtfValorTotal);
+        
+        //Configuração da Tabela de Listagem no jspListagem no FormPadrao
+        modelListagem = new DefaultTableModel(new String[]{"Tipo", "Descrição", "Quantidade", "Valor"}, 0);
+        tabelaListagem = new JTable(modelListagem);
+        jspListagem.setViewportView(tabelaListagem);
+        
+        //Associar o JTable ao jspListagem
+        
         
         
     }

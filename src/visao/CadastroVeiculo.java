@@ -40,7 +40,6 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
         jtfRenavam = new javax.swing.JTextField();
         jtfChassi = new javax.swing.JTextField();
         jlModelo = new javax.swing.JLabel();
-        jtfModelo = new javax.swing.JTextField();
         jlAnoFabricacao = new javax.swing.JLabel();
         jtfAnoFabricacao = new javax.swing.JTextField();
         jlAnoModelo = new javax.swing.JLabel();
@@ -53,6 +52,9 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
         jbCliente = new javax.swing.JComboBox<>();
         jlCliente = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        jcbModelo = new javax.swing.JComboBox<>();
+        jcbMarca = new javax.swing.JComboBox<>();
 
         jbSalvar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jbSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salvar.png"))); // NOI18N
@@ -147,6 +149,13 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
         jlCliente.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jlCliente.setText("Cliente:");
 
+        jLabel2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel2.setText("Marca:");
+
+        jcbModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jcbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jpCamposDadosVeiculoLayout = new javax.swing.GroupLayout(jpCamposDadosVeiculo);
         jpCamposDadosVeiculo.setLayout(jpCamposDadosVeiculoLayout);
         jpCamposDadosVeiculoLayout.setHorizontalGroup(
@@ -155,13 +164,13 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpCamposDadosVeiculoLayout.createSequentialGroup()
-                        .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtfPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtfPlaca, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                             .addComponent(jlModelo)
-                            .addComponent(jtfModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlPatrimonio)
-                            .addComponent(jtfPatrimonio, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlPlaca))
+                            .addComponent(jtfPatrimonio, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(jlPlaca)
+                            .addComponent(jcbModelo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,13 +190,16 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
                                     .addComponent(jlAnoModelo)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpCamposDadosVeiculoLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtfAnoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jtfAnoModelo, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                                    .addComponent(jcbMarca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(jpCamposDadosVeiculoLayout.createSequentialGroup()
                         .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jbCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlCliente))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 9, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(jSeparator1)
         );
@@ -221,17 +233,19 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtfAnoFabricacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtfAnoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpCamposDadosVeiculoLayout.createSequentialGroup()
-                        .addComponent(jlModelo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtfModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jtfAnoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jlModelo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpCamposDadosVeiculoLayout.createSequentialGroup()
-                        .addComponent(jbQuilometragem)
+                        .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbQuilometragem)
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtfQuilometragem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpCamposDadosVeiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfQuilometragem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpCamposDadosVeiculoLayout.createSequentialGroup()
                         .addComponent(jlPatrimonio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -276,6 +290,7 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbAlterar;
@@ -285,6 +300,8 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jbQuilometragem;
     private javax.swing.JButton jbSair;
     private javax.swing.JButton jbSalvar;
+    private javax.swing.JComboBox<String> jcbMarca;
+    private javax.swing.JComboBox<String> jcbModelo;
     private javax.swing.JLabel jlAnoFabricacao;
     private javax.swing.JLabel jlAnoModelo;
     private javax.swing.JLabel jlChassi;
@@ -297,7 +314,6 @@ public class CadastroVeiculo extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jtfAnoFabricacao;
     private javax.swing.JTextField jtfAnoModelo;
     private javax.swing.JTextField jtfChassi;
-    private javax.swing.JTextField jtfModelo;
     private javax.swing.JTextField jtfPatrimonio;
     private javax.swing.JTextField jtfPlaca;
     private javax.swing.JTextField jtfQuilometragem;
