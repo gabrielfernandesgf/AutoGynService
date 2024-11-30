@@ -160,11 +160,11 @@ public class FormPadrao extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton jbAdicionar;
-    private javax.swing.JButton jbAlterar;
-    private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbExcluir;
+    public javax.swing.JPanel jPanel1;
+    protected javax.swing.JButton jbAdicionar;
+    protected javax.swing.JButton jbAlterar;
+    protected javax.swing.JButton jbConsultar;
+    protected javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbSair;
     public javax.swing.JPanel jpCamposDados;
     public javax.swing.JPanel jpValores;

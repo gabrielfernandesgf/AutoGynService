@@ -36,15 +36,18 @@ public class Principal extends javax.swing.JFrame {
         jmiClientes = new javax.swing.JMenuItem();
         jmiVeiculos = new javax.swing.JMenuItem();
         jmiAcessorios = new javax.swing.JMenuItem();
-        jmiMarcaModelo = new javax.swing.JMenuItem();
+        jmiMarca = new javax.swing.JMenuItem();
+        jmiModelo = new javax.swing.JMenuItem();
         jmOrdemServico = new javax.swing.JMenu();
         jmiNovaOs = new javax.swing.JMenuItem();
         jmiConsultarOs = new javax.swing.JMenuItem();
         jmGestaoEstoque = new javax.swing.JMenu();
-        jmiPeças = new javax.swing.JMenuItem();
+        jmiPecas = new javax.swing.JMenuItem();
         jmServicos = new javax.swing.JMenu();
         jmiCadastroServicos = new javax.swing.JMenuItem();
         jmiGerenciarServicos = new javax.swing.JMenuItem();
+        jmiServicosExecutados = new javax.swing.JMenuItem();
+        jmiPecasSubistituir = new javax.swing.JMenuItem();
         jmRelatorios = new javax.swing.JMenu();
         jmiRelatoriosOs = new javax.swing.JMenuItem();
         jmFuncionario = new javax.swing.JMenu();
@@ -104,14 +107,23 @@ public class Principal extends javax.swing.JFrame {
         });
         jmCadastros.add(jmiAcessorios);
 
-        jmiMarcaModelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/marca.png"))); // NOI18N
-        jmiMarcaModelo.setText("Marca / Modelo");
-        jmiMarcaModelo.addActionListener(new java.awt.event.ActionListener() {
+        jmiMarca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/marca.png"))); // NOI18N
+        jmiMarca.setText("Marca");
+        jmiMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiMarcaModeloActionPerformed(evt);
+                jmiMarcaActionPerformed(evt);
             }
         });
-        jmCadastros.add(jmiMarcaModelo);
+        jmCadastros.add(jmiMarca);
+
+        jmiModelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/modelo.png"))); // NOI18N
+        jmiModelo.setText(" Modelo");
+        jmiModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiModeloActionPerformed(evt);
+            }
+        });
+        jmCadastros.add(jmiModelo);
 
         jMenuBar1.add(jmCadastros);
 
@@ -133,6 +145,11 @@ public class Principal extends javax.swing.JFrame {
         jmiConsultarOs.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiConsultarOs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa.png"))); // NOI18N
         jmiConsultarOs.setText("Consultar OS");
+        jmiConsultarOs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiConsultarOsActionPerformed(evt);
+            }
+        });
         jmOrdemServico.add(jmiConsultarOs);
 
         jMenuBar1.add(jmOrdemServico);
@@ -142,15 +159,15 @@ public class Principal extends javax.swing.JFrame {
         jmGestaoEstoque.setText("Gestão de Estoque");
         jmGestaoEstoque.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
 
-        jmiPeças.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jmiPeças.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vela-de-ignicao.png"))); // NOI18N
-        jmiPeças.setText("Peças");
-        jmiPeças.addActionListener(new java.awt.event.ActionListener() {
+        jmiPecas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jmiPecas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vela-de-ignicao.png"))); // NOI18N
+        jmiPecas.setText("Peças");
+        jmiPecas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiPeçasActionPerformed(evt);
+                jmiPecasActionPerformed(evt);
             }
         });
-        jmGestaoEstoque.add(jmiPeças);
+        jmGestaoEstoque.add(jmiPecas);
 
         jMenuBar1.add(jmGestaoEstoque);
 
@@ -177,6 +194,24 @@ public class Principal extends javax.swing.JFrame {
         });
         jmServicos.add(jmiGerenciarServicos);
 
+        jmiServicosExecutados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/executivo.png"))); // NOI18N
+        jmiServicosExecutados.setText("Serviços Executados");
+        jmiServicosExecutados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiServicosExecutadosActionPerformed(evt);
+            }
+        });
+        jmServicos.add(jmiServicosExecutados);
+
+        jmiPecasSubistituir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pecas-de-reposicao.png"))); // NOI18N
+        jmiPecasSubistituir.setText("Peças a Subistituir");
+        jmiPecasSubistituir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiPecasSubistituirActionPerformed(evt);
+            }
+        });
+        jmServicos.add(jmiPecasSubistituir);
+
         jMenuBar1.add(jmServicos);
 
         jmRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/metrica.png"))); // NOI18N
@@ -187,6 +222,11 @@ public class Principal extends javax.swing.JFrame {
         jmiRelatoriosOs.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiRelatoriosOs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/relatorio.png"))); // NOI18N
         jmiRelatoriosOs.setText("Relatorios de OS");
+        jmiRelatoriosOs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiRelatoriosOsActionPerformed(evt);
+            }
+        });
         jmRelatorios.add(jmiRelatoriosOs);
 
         jMenuBar1.add(jmRelatorios);
@@ -230,12 +270,12 @@ public class Principal extends javax.swing.JFrame {
         tela.setVisible(true);
     }//GEN-LAST:event_jmiClientesActionPerformed
 
-    private void jmiPeçasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiPeçasActionPerformed
+    private void jmiPecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiPecasActionPerformed
         // TODO add your handling code here:
         EstoqueVisao tela = new EstoqueVisao();
         jDesktop.add(tela);
         tela.setVisible(true);
-    }//GEN-LAST:event_jmiPeçasActionPerformed
+    }//GEN-LAST:event_jmiPecasActionPerformed
 
     private void jmiVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiVeiculosActionPerformed
         // TODO add your handling code here:
@@ -273,12 +313,12 @@ public class Principal extends javax.swing.JFrame {
         tela.setVisible(true);
     }//GEN-LAST:event_jmiCadastroServicosActionPerformed
 
-    private void jmiMarcaModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMarcaModeloActionPerformed
+    private void jmiMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMarcaActionPerformed
         // TODO add your handling code here:
-        CadastroMarcaModelo tela = new CadastroMarcaModelo();
+        CadastroMarcaVisao tela = new CadastroMarcaVisao();
         jDesktop.add(tela);
         tela.setVisible(true);
-    }//GEN-LAST:event_jmiMarcaModeloActionPerformed
+    }//GEN-LAST:event_jmiMarcaActionPerformed
 
     private void jmiGerenciarServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiGerenciarServicosActionPerformed
         // TODO add your handling code here:
@@ -286,6 +326,41 @@ public class Principal extends javax.swing.JFrame {
         jDesktop.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_jmiGerenciarServicosActionPerformed
+
+    private void jmiModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiModeloActionPerformed
+        // TODO add your handling code here:
+        CadastroModeloVisao tela = new CadastroModeloVisao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiModeloActionPerformed
+
+    private void jmiConsultarOsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiConsultarOsActionPerformed
+        // TODO add your handling code here:
+        ConsultarOsVisao tela = new ConsultarOsVisao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiConsultarOsActionPerformed
+
+    private void jmiServicosExecutadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiServicosExecutadosActionPerformed
+        // TODO add your handling code here:
+        ServicoExecutadoVisao tela = new ServicoExecutadoVisao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiServicosExecutadosActionPerformed
+
+    private void jmiPecasSubistituirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiPecasSubistituirActionPerformed
+        // TODO add your handling code here:
+        PecaSubstituirVisao tela = new PecaSubstituirVisao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiPecasSubistituirActionPerformed
+
+    private void jmiRelatoriosOsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRelatoriosOsActionPerformed
+        // TODO add your handling code here:
+        RelatorioVisao tela = new RelatorioVisao();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiRelatoriosOsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,10 +412,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiConsultarOs;
     private javax.swing.JMenuItem jmiFuncionario;
     private javax.swing.JMenuItem jmiGerenciarServicos;
-    private javax.swing.JMenuItem jmiMarcaModelo;
+    private javax.swing.JMenuItem jmiMarca;
+    private javax.swing.JMenuItem jmiModelo;
     private javax.swing.JMenuItem jmiNovaOs;
-    private javax.swing.JMenuItem jmiPeças;
+    private javax.swing.JMenuItem jmiPecas;
+    private javax.swing.JMenuItem jmiPecasSubistituir;
     private javax.swing.JMenuItem jmiRelatoriosOs;
+    private javax.swing.JMenuItem jmiServicosExecutados;
     private javax.swing.JMenuItem jmiVeiculos;
     // End of variables declaration//GEN-END:variables
 }

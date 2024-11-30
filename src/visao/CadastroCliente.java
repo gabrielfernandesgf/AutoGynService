@@ -17,11 +17,11 @@ import javax.swing.JTextField;
  */
 public class CadastroCliente extends javax.swing.JInternalFrame {
 
-
     public CadastroCliente() {
         initComponents();
 
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,9 +75,9 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         jtfBairro = new javax.swing.JTextField();
         jbCancelar = new javax.swing.JButton();
         jbSalvar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jmiAlterar = new javax.swing.JButton();
+        jmiExcluir = new javax.swing.JButton();
+        jmiConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -333,17 +333,22 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         jbSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salvar.png"))); // NOI18N
         jbSalvar.setText("Salvar");
 
-        jButton1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trocar.png"))); // NOI18N
-        jButton1.setText("Alterar");
+        jmiAlterar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jmiAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trocar.png"))); // NOI18N
+        jmiAlterar.setText("Alterar");
 
-        jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lixo.png"))); // NOI18N
-        jButton2.setText("Excluir");
+        jmiExcluir.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jmiExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lixo.png"))); // NOI18N
+        jmiExcluir.setText("Excluir");
 
-        jButton3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa.png"))); // NOI18N
-        jButton3.setText("Consultar");
+        jmiConsultar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jmiConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa.png"))); // NOI18N
+        jmiConsultar.setText("Consultar");
+        jmiConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiConsultarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -354,11 +359,11 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
             .addComponent(jpEndereço, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jButton1)
+                .addComponent(jmiAlterar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(jmiExcluir)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(jmiConsultar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbCancelar)
                 .addGap(18, 18, 18)
@@ -378,9 +383,9 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                     .addComponent(jbSalvar)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jbCancelar)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)
-                        .addComponent(jButton3)))
+                        .addComponent(jmiAlterar)
+                        .addComponent(jmiExcluir)
+                        .addComponent(jmiConsultar)))
                 .addGap(0, 22, Short.MAX_VALUE))
         );
 
@@ -391,6 +396,12 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jbCancelarActionPerformed
+
+    private void jmiConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiConsultarActionPerformed
+        // TODO add your handling code here:
+        ConsultarClientesVisao consultaClientes = new ConsultarClientesVisao();
+        consultaClientes.setVisible(true);
+    }//GEN-LAST:event_jmiConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -435,9 +446,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -464,6 +472,9 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlStatus;
     private javax.swing.JLabel jlTelefoneComercial;
     private javax.swing.JLabel jlTelefoneResidencial;
+    private javax.swing.JButton jmiAlterar;
+    private javax.swing.JButton jmiConsultar;
+    private javax.swing.JButton jmiExcluir;
     private javax.swing.JPanel jpContatos;
     public javax.swing.JPanel jpDadosBasicos;
     private javax.swing.JPanel jpEndereço;

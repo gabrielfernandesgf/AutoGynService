@@ -18,20 +18,18 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Gabriel Fernandes
  */
-public class CadastroMarcaModelo extends FormPadrao {
+public class CadastroMarcaVisao extends FormPadrao {
 
-    JLabel jlIdMarca, jlNomeMarca, jlDescricaoMarca,
-            jlIdModelo, jlNomeModelo, jlDescricaoModelo;
-    JTextField jtfIdMarca, jtfNomeMarca, jtfDescricaoMarca,
-            jtfIdModelo, jtfNomeModelo, jtfDescricaoModelo;
+    JLabel jlIdMarca, jlNomeMarca, jlDescricaoMarca;
+    JTextField jtfIdMarca, jtfNomeMarca, jtfDescricaoMarca;
     JSeparator separator;
 
-    JTable tabelaMarca, tabelaModelo;
-    DefaultTableModel modelMarcas, modelModelos;
+    JTable tabelaMarca;
+    DefaultTableModel modelMarcas;
 
     JPanel jpTabelas;
 
-    public CadastroMarcaModelo() {
+    public CadastroMarcaVisao() {
         setTitle("CADASTRO MARCA E MODELO");
 
         //Criação Marca
@@ -65,44 +63,16 @@ public class CadastroMarcaModelo extends FormPadrao {
         separator.setBounds(0, 125, 800, 10);
         jpCamposDados.add(separator);
 
-        //Criacao Modelo
-        jlIdModelo = new JLabel("ID:");
-        jlIdModelo.setBounds(9, 150, 50, 25);
-        jpCamposDados.add(jlIdModelo);
-
-        jtfIdModelo = new JTextField();
-        jtfIdModelo.setBounds(30, 150, 50, 25);
-        jpCamposDados.add(jtfIdModelo);
-        jtfIdModelo.setEditable(false);
-
-        jlNomeModelo = new JLabel("Nome do Modelo:");
-        jlNomeModelo.setBounds(90, 150, 100, 25);
-        jpCamposDados.add(jlNomeModelo);
-
-        jtfNomeModelo = new JTextField();
-        jtfNomeModelo.setBounds(190, 150, 600, 25);
-        jpCamposDados.add(jtfNomeModelo);
-
-        jlDescricaoModelo = new JLabel("Descrição:");
-        jlDescricaoModelo.setBounds(9, 180, 100, 25);
-        jpCamposDados.add(jlDescricaoModelo);
-
-        jtfDescricaoModelo = new JTextField();
-        jtfDescricaoModelo.setBounds(9, 200, 780, 50);
-        jpCamposDados.add(jtfDescricaoModelo);
+        
 
         //Configuração das Tabelas no jspListagem do FormPadrao
         modelMarcas = new DefaultTableModel(new String[]{"ID", "Nome", "Descrição"}, 0);
         tabelaMarca = new JTable(modelMarcas);
 
-        modelModelos = new DefaultTableModel(new String[]{"ID", "Nome", "Descrição"}, 0);
-        tabelaModelo = new JTable(modelModelos);
-
         //Painel para Juntas as tabelas e Listar no jspListagem do FormPadrao
         jpTabelas = new JPanel();
         jpTabelas.setLayout(new GridLayout(2, 1, 10, 10));
         jpTabelas.add(new JScrollPane(tabelaMarca));
-        jpTabelas.add(new JScrollPane(tabelaModelo));
 
         jspListagem.setViewportView(jpTabelas);
 
@@ -113,17 +83,9 @@ public class CadastroMarcaModelo extends FormPadrao {
 
         String nomeMarca = jtfNomeMarca.getText().trim();
         String descricaoMarca = jtfDescricaoMarca.getText().trim();
-        String nomeModelo = jtfNomeModelo.getText().trim();
-        String descricaoModelo = jtfDescricaoModelo.getText().trim();
         //Adicionar Marca a tabela
         if (nomeMarca.isEmpty() || descricaoMarca.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, preencha os campos de Marca.", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        //Adicionar Modelo a tabela
-        if (nomeModelo.isEmpty() || descricaoModelo.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, preencha os campos de Modelo.", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
     }
