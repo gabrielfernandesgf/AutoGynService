@@ -50,12 +50,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         jtfCelular = new javax.swing.JTextField();
         jlEmail = new javax.swing.JLabel();
         jtfEmail = new javax.swing.JTextField();
-        jlSite = new javax.swing.JLabel();
-        jtfSite = new javax.swing.JTextField();
-        jlRedeSocial = new javax.swing.JLabel();
-        jtfRedeSocial = new javax.swing.JTextField();
-        jlOutros = new javax.swing.JLabel();
-        jtfOutros = new javax.swing.JTextField();
         jpEndereço = new javax.swing.JPanel();
         jlEndereco = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -136,19 +130,13 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         jlContatos.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jlContatos.setText("Contatos");
 
-        jlTelefoneResidencial.setText("Telefone Residencial");
+        jlTelefoneResidencial.setText("DDI");
 
-        jlTelefoneComercial.setText("Telefone Comercial");
+        jlTelefoneComercial.setText("DDD");
 
-        jlCelular.setText("Celular");
+        jlCelular.setText("TELEFONE");
 
         jlEmail.setText("Email");
-
-        jlSite.setText("Site");
-
-        jlRedeSocial.setText("Rede Social");
-
-        jlOutros.setText("Outros");
 
         javax.swing.GroupLayout jpContatosLayout = new javax.swing.GroupLayout(jpContatos);
         jpContatos.setLayout(jpContatosLayout);
@@ -160,42 +148,24 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                     .addGroup(jpContatosLayout.createSequentialGroup()
                         .addComponent(jlContatos)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jSeparator2)
                     .addGroup(jpContatosLayout.createSequentialGroup()
                         .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpContatosLayout.createSequentialGroup()
-                                .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpContatosLayout.createSequentialGroup()
-                                        .addComponent(jtfTelefoneResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jtfTelefoneComercial, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jtfCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jpContatosLayout.createSequentialGroup()
-                                        .addComponent(jlTelefoneResidencial)
-                                        .addGap(96, 96, 96)
-                                        .addComponent(jlTelefoneComercial)
-                                        .addGap(111, 111, 111)
-                                        .addComponent(jlCelular)))
-                                .addGap(18, 18, 18)
-                                .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlEmail)
-                                    .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jpContatosLayout.createSequentialGroup()
-                                .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlSite)
-                                    .addComponent(jtfSite, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpContatosLayout.createSequentialGroup()
-                                        .addComponent(jlRedeSocial)
-                                        .addGap(164, 164, 164)
-                                        .addComponent(jlOutros))
-                                    .addGroup(jpContatosLayout.createSequentialGroup()
-                                        .addComponent(jtfRedeSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jtfOutros, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 14, Short.MAX_VALUE))
-                    .addComponent(jSeparator2)))
+                            .addComponent(jlTelefoneResidencial)
+                            .addComponent(jtfTelefoneResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfTelefoneComercial, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlTelefoneComercial))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlCelular))
+                        .addGap(42, 42, 42)
+                        .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlEmail)
+                            .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17))))
         );
         jpContatosLayout.setVerticalGroup(
             jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,17 +186,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                     .addComponent(jtfTelefoneComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlSite)
-                    .addComponent(jlRedeSocial)
-                    .addComponent(jlOutros))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfSite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfRedeSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfOutros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         jlEndereco.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
@@ -466,9 +426,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlEstado;
     private javax.swing.JLabel jlICMS;
     private javax.swing.JLabel jlNumeroEndereco;
-    private javax.swing.JLabel jlOutros;
-    private javax.swing.JLabel jlRedeSocial;
-    private javax.swing.JLabel jlSite;
     private javax.swing.JLabel jlStatus;
     private javax.swing.JLabel jlTelefoneComercial;
     private javax.swing.JLabel jlTelefoneResidencial;
@@ -487,9 +444,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jtfEndereco;
     private javax.swing.JTextField jtfEstado;
     private javax.swing.JTextField jtfNumero;
-    private javax.swing.JTextField jtfOutros;
-    private javax.swing.JTextField jtfRedeSocial;
-    private javax.swing.JTextField jtfSite;
     private javax.swing.JTextField jtfTelefoneComercial;
     private javax.swing.JTextField jtfTelefoneResidencial;
     // End of variables declaration//GEN-END:variables

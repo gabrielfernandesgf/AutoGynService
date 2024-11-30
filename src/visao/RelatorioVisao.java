@@ -3,12 +3,13 @@ package visao;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import com.toedter.calendar.JDateChooser;
+import java.text.SimpleDateFormat;
 
 public class RelatorioVisao extends FormPadrao {
 
     // Componentes para Filtros
     JLabel jlPeriodoInicio, jlPeriodoFim, jlTipoRelatorio;
-    JTextField jtfPeriodoInicio, jtfPeriodoFim;
+    JDateChooser jdcPeriodoInicio, jdcPeriodoFim; // Substituí JTextField por JDateChooser
     JComboBox<String> jcbTipoRelatorio;
     JButton jbGerarRelatorio, jbExportar, jbFechar;
 
@@ -24,17 +25,17 @@ public class RelatorioVisao extends FormPadrao {
         jlPeriodoInicio.setBounds(10, 10, 100, 25);
         jpCamposDados.add(jlPeriodoInicio);
 
-        jtfPeriodoInicio = new JTextField();
-        jtfPeriodoInicio.setBounds(120, 10, 120, 25);
-        jpCamposDados.add(jtfPeriodoInicio);
+        jdcPeriodoInicio = new JDateChooser(); // JDateChooser para o período inicial
+        jdcPeriodoInicio.setBounds(120, 10, 120, 25);
+        jpCamposDados.add(jdcPeriodoInicio);
 
         jlPeriodoFim = new JLabel("Período Fim:");
         jlPeriodoFim.setBounds(250, 10, 100, 25);
         jpCamposDados.add(jlPeriodoFim);
 
-        jtfPeriodoFim = new JTextField();
-        jtfPeriodoFim.setBounds(340, 10, 120, 25);
-        jpCamposDados.add(jtfPeriodoFim);
+        jdcPeriodoFim = new JDateChooser(); // JDateChooser para o período final
+        jdcPeriodoFim.setBounds(340, 10, 120, 25);
+        jpCamposDados.add(jdcPeriodoFim);
 
         jlTipoRelatorio = new JLabel("Tipo de Relatório:");
         jlTipoRelatorio.setBounds(10, 50, 120, 25);
@@ -78,8 +79,11 @@ public class RelatorioVisao extends FormPadrao {
     }
 
     private void gerarRelatorio() {
-        String periodoInicio = jtfPeriodoInicio.getText();
-        String periodoFim = jtfPeriodoFim.getText();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        // Obtendo as datas dos JDateChooser
+        String periodoInicio = (jdcPeriodoInicio.getDate() != null) ? sdf.format(jdcPeriodoInicio.getDate()) : "";
+        String periodoFim = (jdcPeriodoFim.getDate() != null) ? sdf.format(jdcPeriodoFim.getDate()) : "";
         String tipoRelatorio = (String) jcbTipoRelatorio.getSelectedItem();
 
         modeloTabela.setRowCount(0); // Limpar a tabela antes de gerar
