@@ -29,7 +29,13 @@ public class CadastroModeloVisao extends FormPadrao {
 
     public CadastroModeloVisao() {
         setTitle("CADASTRO DE MODELO");
+    }
 
+
+
+    @Override
+    public void inicializarComponentes() {
+        
         //Criacao Modelo
         jlIdModelo = new JLabel("ID:");
         jlIdModelo.setBounds(9, 5, 50, 25);
@@ -65,8 +71,8 @@ public class CadastroModeloVisao extends FormPadrao {
 
         jspListagem.setViewportView(jpTabelas);
     }
-
-    private void jbAdicionarActionPerformed(java.awt.event.ActionEvent evt) {
+    
+        private void jbAdicionarActionPerformed(java.awt.event.ActionEvent evt) {
 
         String nomeModelo = jtfNomeModelo.getText().trim();
         String descricaoModelo = jtfDescricaoModelo.getText().trim();

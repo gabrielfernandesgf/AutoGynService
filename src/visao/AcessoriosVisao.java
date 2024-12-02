@@ -20,6 +20,10 @@ public class AcessoriosVisao extends FormPadrao {
     public AcessoriosVisao() {
         setTitle("CADASTRO DE ACESSORIOS");
         
+   }
+
+    @Override
+    public void inicializarComponentes() {
         jlNome = new JLabel("Nome:");
         jlNome.setBounds(9, 5, 50, 25);
         jpCamposDados.add(jlNome);
@@ -57,5 +61,5 @@ public class AcessoriosVisao extends FormPadrao {
         tabelaListagem = new JTable(modelListagem);
         jspListagem.setViewportView(tabelaListagem);
         
-   }
+    }
 }

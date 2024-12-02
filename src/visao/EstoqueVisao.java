@@ -22,6 +22,11 @@ public class EstoqueVisao extends FormPadrao {
     public EstoqueVisao() {
         setTitle("Gestao de Estoque");
 
+    }
+
+    @Override
+    public void inicializarComponentes() {
+        //implementar os metodos aqui
         jlId = new JLabel("ID:");
         jlId.setBounds(9, 5, 50, 25);
         jpCamposDados.add(jlId);
@@ -86,7 +91,6 @@ public class EstoqueVisao extends FormPadrao {
 
         //Evento do Botao salvar
         configurarEventos();
-
     }
 
     private void configurarEventos() {
@@ -138,6 +142,5 @@ public class EstoqueVisao extends FormPadrao {
             tela.setVisible(true);
         });
     }
-    
 
 }

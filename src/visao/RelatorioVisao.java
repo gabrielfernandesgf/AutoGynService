@@ -19,7 +19,10 @@ public class RelatorioVisao extends FormPadrao {
 
     public RelatorioVisao() {
         setTitle("Relatórios");
+    }
 
+    @Override
+    public void inicializarComponentes() {
         // Filtros
         jlPeriodoInicio = new JLabel("Período Início:");
         jlPeriodoInicio.setBounds(10, 10, 100, 25);
@@ -114,4 +117,5 @@ public class RelatorioVisao extends FormPadrao {
             tela.setVisible(true);
         });
     }
+
 }

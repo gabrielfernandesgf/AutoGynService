@@ -29,10 +29,16 @@ public class CadastroMarcaVisao extends FormPadrao {
 
     JPanel jpTabelas;
 
+    //Metodo Construtor
     public CadastroMarcaVisao() {
         setTitle("CADASTRO MARCA E MODELO");
 
-        //Criação Marca
+    }
+
+
+    @Override
+    public void inicializarComponentes() {
+                //Criação Marca
         jlIdMarca = new JLabel("ID:");
         jlIdMarca.setBounds(9, 5, 50, 25);
         jpCamposDados.add(jlIdMarca);
@@ -75,9 +81,9 @@ public class CadastroMarcaVisao extends FormPadrao {
         jpTabelas.add(new JScrollPane(tabelaMarca));
 
         jspListagem.setViewportView(jpTabelas);
-
+        
     }
-
+    
     //Ação do clicar no botao salvar.
     private void jbAdicionarActionPerformed(java.awt.event.ActionEvent evt) {
 

@@ -19,7 +19,10 @@ public class ServicoExecutadoVisao extends FormPadrao {
 
     public ServicoExecutadoVisao() {
         setTitle("Serviços Executados");
+    }
 
+    @Override
+    public void inicializarComponentes() {
         // Campos de entrada no painel jpCamposDados
         JLabel lblIdOS = new JLabel("ID OS:");
         lblIdOS.setBounds(10, 10, 80, 25);
@@ -181,4 +184,5 @@ public class ServicoExecutadoVisao extends FormPadrao {
             tela.setVisible(true);
         });
     }
+
 }

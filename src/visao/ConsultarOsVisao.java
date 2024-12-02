@@ -20,6 +20,11 @@ public class ConsultarOsVisao extends FormPadrao {
     public ConsultarOsVisao() {
         setTitle("LISTA DE ORDEM DE SERVIÇO");
 
+    }
+
+    @Override
+    public void inicializarComponentes() {
+        //implementar os metodos aqui
         jlBuscaCliente = new JLabel("Buscar Cliente:");
         jlBuscaCliente.setBounds(10, 10, 100, 25);
         jpCamposDados.add(jlBuscaCliente);

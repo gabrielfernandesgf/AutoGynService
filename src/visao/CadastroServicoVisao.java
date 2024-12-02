@@ -19,8 +19,11 @@ public class CadastroServicoVisao extends FormPadrao {
     
 
     public CadastroServicoVisao() {
-        setTitle("CADASTRO DE SERVIÇOS");
-        
+        setTitle("CADASTRO DE SERVIÇOS");   
+    }
+
+    @Override
+    public void inicializarComponentes() {
         jlIdServico = new JLabel("ID SERVIÇO:");
         jlIdServico.setBounds(2, 20, 100, 25);
         jpCamposDados.add(jlIdServico);
@@ -58,8 +61,6 @@ public class CadastroServicoVisao extends FormPadrao {
         modeloTabela = new DefaultTableModel(new String[]{"ID", "Serviço", "Descrição", "Valor"}, 0);
         tabelaServicos = new JTable(modeloTabela);
         jspListagem.setViewportView(tabelaServicos);
-        
-        
     }
     
     

@@ -8,13 +8,17 @@ package visao;
  *
  * @author Gabriel Fernandes
  */
-public class FormPadrao extends javax.swing.JInternalFrame {
+abstract public class FormPadrao extends javax.swing.JInternalFrame {
+    
+    //Metodos abstrados que seram implementados pela classe Filha
+    abstract public void inicializarComponentes();
 
     /**
      * Creates new form FormPadrao1
      */
     public FormPadrao() {
         initComponents();
+        inicializarComponentes();
     }
 
     /**
